@@ -1,9 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
+
+
+
 public class Joblistingsanim : MonoBehaviour
 {
-    
+
+
     [Header("Scaling Settings")]
     [SerializeField] private float moveSpeed = 5f;
 
@@ -19,11 +23,19 @@ public class Joblistingsanim : MonoBehaviour
     private Vector3 currentTarget;
     private bool isEnglarged = false;
 
+    private SpriteRenderer spriteRenderer;
+    private int originalOrder;
+    public int frontOrder = 100;
+    private bool isFront = false;
+
     void Start() {
 
         originalScale = transform.localScale;
         currentTarget = originalScale;
         originalPosition = transform.position;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalOrder = spriteRenderer.sortingOrder;
     }
 
     void Update() {
@@ -34,6 +46,16 @@ public class Joblistingsanim : MonoBehaviour
     }
 
     void OnMouseDown() {
+
+        if (!isFront) {
+            spriteRenderer.sortingOrder = frontOrder;
+        }
+
+        else {
+            spriteRenderer.sortingOrder = originalOrder;
+        }
+
+        isFront = !isFront;
 
         isEnglarged = !isEnglarged;
 
