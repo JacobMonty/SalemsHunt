@@ -1,11 +1,13 @@
+using System;
+using Unity.Jobs.LowLevel.Unsafe;
 using UnityEngine;
 
 public class mirrorManager : MonoBehaviour
 {
     public Canvas mirror_canvas;
-    public void LoadJobs() { 
-        
-    }
+    String[] jobs = new String[] { "job 1", "job 2", "job 3", "job 4" };
+
+ 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
