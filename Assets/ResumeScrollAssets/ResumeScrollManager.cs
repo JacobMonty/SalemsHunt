@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class ResumeScrollManager : MonoBehaviour
 {
@@ -95,7 +96,7 @@ public class ResumeScrollManager : MonoBehaviour
 
     public void sendToJobMirror()
     {
-        Debug.Log("IMPLEMENT");
+        SceneManager.LoadScene("MagicMirror");
     }
 
     void Start() {
