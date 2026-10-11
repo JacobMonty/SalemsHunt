@@ -40,9 +40,8 @@ public class ResumeScrollManager : MonoBehaviour
 
         for (int i = 0; i < keyWords.Length; i++)
         {
-            float yvalue = initialy - (i * 30);
+            float yvalue = initialy - (i * 100);
             string wordText = keyWords[i];
-            Debug.Log(wordText);
 
             UnityEngine.UI.Button DraggableWord = Instantiate(DraggableKeywordItem,  new Vector3(DraggableKeywordItem.transform.position.x, 
                  yvalue, DraggableKeywordItem.transform.position.z), Quaternion.identity);
