@@ -105,5 +105,7 @@ public class ResumeScrollManager : MonoBehaviour
 
         books.Add("SpinningTheWeb", new bookInformation("Spinning the Web", "Learn the ins and outs of spinning tales, information, or anything you can desire to share to your fellow witches and wizards!", new string[] { "Fullstack Web Development", "Web Devlopment" }));
         books.Add("SecurityInMagicking", new bookInformation("Security In Magicking", "Magic can be difficult, but don't let bad actors intercept good magic! Keep your practice safe with Magic Security!", new string[] { "Magic Security" }));
+        books.Add("IntroToSea", new bookInformation("Intro to Sea", "Embark on a journey of the seven seas, learning how to point your way to the next goal!", new string[] { "Sea", "Programming" }));
+        books.Add("VibecastingLikeAPro", new bookInformation("Vibecasting Like A Pro", "Magic can be tedious, but it doesn't have to be! Get 10 years of experience Vibecasting in just three easy steps!", new string[] { "Prompting", "Clawd", "Gemini" }));
     }
 }
