@@ -1,16 +1,30 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
-public class DraggableKeyword : MonoBehaviour
+public class DraggableKeyword : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    Transform parentBeforeDrag;
+    Vector3 originalPosition;
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        
+        parentBeforeDrag = transform.parent;
+        originalPosition = transform.position;
+        Debug.Log("Drag Begin");
+        transform.SetParent(transform.root);
+        transform.SetAsLastSibling();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnDrag(PointerEventData eventData)
     {
-        
+        transform.position = Input.mousePosition;
     }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        Debug.Log("Drag End");
+        transform.parent = parentBeforeDrag;
+        transform.position = originalPosition;
+    }
+
 }

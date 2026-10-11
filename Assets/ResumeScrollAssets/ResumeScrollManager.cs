@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -13,9 +14,10 @@ public class ResumeScrollManager : MonoBehaviour
     public GameObject KeywordsPanel;
     public TextMeshProUGUI BookTitle;
     public TextMeshProUGUI BookDescription;
-    public DraggableKeyword DraggableKeywordItem;
+    public UnityEngine.UI.Button DraggableKeywordItem;
 
     private UnityEngine.UI.Image hiddenBook = null;
+    private string[] skills = new string[]{"", "", ""};
 
     public class bookInformation {
         public string title;
@@ -42,10 +44,11 @@ public class ResumeScrollManager : MonoBehaviour
             string wordText = keyWords[i];
             Debug.Log(wordText);
 
-            DraggableKeyword DraggableWord = Instantiate(DraggableKeywordItem,  new Vector3(DraggableKeywordItem.transform.position.x, 
+            UnityEngine.UI.Button DraggableWord = Instantiate(DraggableKeywordItem,  new Vector3(DraggableKeywordItem.transform.position.x, 
                  yvalue, DraggableKeywordItem.transform.position.z), Quaternion.identity);
             DraggableWord.transform.parent = KeywordsPanel.transform;
-            DraggableWord.GetComponent<TextMeshProUGUI>().text = keyWords[i];
+            DraggableWord.GetComponentInChildren<TextMeshProUGUI>().text = keyWords[i];
+            DraggableWord.enabled = true;
 
         }
     }
@@ -79,6 +82,16 @@ public class ResumeScrollManager : MonoBehaviour
         hiddenBook.enabled = true;
         hiddenBook = null;
         BookMenu.enabled = false;
+    }
+
+    public void setSkill(int num, string skill)
+    {
+        skills[num] = skill;
+
+        foreach(string skillString in skills)
+        {
+            Debug.Log(skillString);
+        }
     }
 
     void Start() {
