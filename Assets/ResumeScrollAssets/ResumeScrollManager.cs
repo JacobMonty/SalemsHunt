@@ -94,6 +94,11 @@ public class ResumeScrollManager : MonoBehaviour
         }
     }
 
+    public void sendToJobMirror()
+    {
+        Debug.Log("IMPLEMENT");
+    }
+
     void Start() {
         BookMenu.enabled = false;
         DraggableKeywordItem.enabled = false;
