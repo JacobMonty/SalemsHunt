@@ -9,8 +9,16 @@ using UnityEngine.UIElements;
 
 public class OpeningJobListingscript : MonoBehaviour
 {
-    public Canvas JobMenu;
-    public TextMeshProUGUI JobTitle;
-    public TextMeshProUGUI JobDescription;
-    
+
+    [SerializeField] private GameObject textObject;
+
+    private void OnMouseDown() {
+
+        if (textObject != null) {
+
+            bool isActive = textObject.activeSelf;
+            textObject.SetActive(!isActive);
+        }
+    }
+
 }
