@@ -207,29 +207,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 146568910}
-  - component: {fileID: 146568909}
+  - component: {fileID: 146568911}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: ResumeScrollManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &146568909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146568908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3293a852c4e49145a44d5d579468474, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  BookMenu: {fileID: 1942078349}
-  BookTitle: {fileID: 544108709}
-  BookDescription: {fileID: 420413990}
 --- !u!4 &146568910
 Transform:
   m_ObjectHideFlags: 0
@@ -245,6 +230,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &146568911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146568908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97f5cd533250f940afb40bbb728db4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  BookMenu: {fileID: 1942078349}
+  KeywordsPanel: {fileID: 885743314}
+  BookTitle: {fileID: 544108709}
+  BookDescription: {fileID: 420413990}
+  DraggableKeywordItem: {fileID: 1503379868}
 --- !u!1 &254216315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,8 +1137,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 146568909}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 146568911}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: CloseBook
         m_Mode: 1
         m_Arguments:
@@ -1217,6 +1219,7 @@ RectTransform:
   - {fileID: 2087816246}
   - {fileID: 544108708}
   - {fileID: 420413989}
+  - {fileID: 885743315}
   m_Father: {fileID: 1942078346}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1506,6 +1509,81 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &885743314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885743315}
+  - component: {fileID: 885743317}
+  - component: {fileID: 885743316}
+  m_Layer: 5
+  m_Name: KeywordsPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &885743315
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885743314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 636895547}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 105.0095, y: 5.2882}
+  m_SizeDelta: {x: -237.2154, y: -24.1749}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &885743316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885743314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &885743317
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885743314}
+  m_CullTransparentMesh: 1
 --- !u!1 &895751385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,8 +2168,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 146568909}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 146568911}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: OpenBook
         m_Mode: 2
         m_Arguments:
@@ -2140,6 +2218,114 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350362938}
   m_CullTransparentMesh: 1
+--- !u!1001 &1503379866
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 113.1217
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 28.091599
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 780.8446
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 365.26123
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 169830934659882415, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903350447383610566, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+      propertyPath: m_Name
+      value: DraggableKeyword
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+--- !u!114 &1503379868 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 18219058643035262, guid: 66338a07d8de1074b9e7386a2758448a, type: 3}
+  m_PrefabInstance: {fileID: 1503379866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b6b84e3c58788429903b0b3c4ea390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableKeyword
 --- !u!1 &1512721616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,8 +2484,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 146568909}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 146568911}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: OpenBook
         m_Mode: 2
         m_Arguments:
@@ -3038,3 +3224,4 @@ SceneRoots:
   - {fileID: 6740619305834778898}
   - {fileID: 115502412}
   - {fileID: 146568910}
+  - {fileID: 1503379866}
