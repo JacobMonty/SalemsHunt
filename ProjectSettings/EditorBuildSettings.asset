@@ -6,7 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title Screen.unity
+    guid: c02e18d31019dd0489be2dd3d89bd685
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/MagicMirror.unity
+    guid: 3f2affba4bf90894ba3cbb2fd298ccb8
+  - enabled: 1
+    path: Assets/Scenes/ResumeScroll.unity
+    guid: 520c786b72e16ca42b30f4049c7679d2
+  - enabled: 1
+    path: Assets/Scenes/InterviewScene.unity
+    guid: 6aa2db6f9f6fa4d61bf49a5f02e981b3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
